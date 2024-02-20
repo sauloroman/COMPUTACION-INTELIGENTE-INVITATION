@@ -21,6 +21,7 @@ export const InvitationPage = () => {
   const { modal: { isOpen, content, titleModal } } = useUI();
 
   useEffect(() => {
+    reloadStudent();
     students();
 
     const animation = new ScrollReveal({ reset: true, duration: 2000, delay: 1500 });
@@ -45,7 +46,7 @@ export const InvitationPage = () => {
     animation.reveal('.footer__generation', { distance: '25px', origin: 'bottom', scale: 1.05 } );
     animation.reveal('.footer__career', { distance: '25px', origin: 'bottom', scale: 1.05 } );
     animation.reveal('.ticket__container', { distance: '25px', origin: 'bottom', scale: 1.5 } );
-
+  
   }, []);
 
   const students = async () => {
