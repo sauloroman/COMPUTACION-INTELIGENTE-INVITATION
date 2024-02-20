@@ -17,7 +17,7 @@ import { Modal } from "./components/Modal";
 
 export const InvitationPage = () => {
 
-  const { getStudents } = useGuest();
+  const { getStudents, reloadStudent } = useGuest();
   const { modal: { isOpen, content, titleModal } } = useUI();
 
   useEffect(() => {
