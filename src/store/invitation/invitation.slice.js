@@ -17,10 +17,17 @@ export const invitationSlice = createSlice({
             state.studentGuests = payload.studentGuests;
             state.studentName = payload.studentName;
         },
+
+        resetInvitation: ( state, _ ) => {
+            state.studentId = null;
+            state.studentGuests = 0;
+            state.studentName = '';
+        }
     }
 })
 
 export const { 
     setStudentId,
+    resetInvitation,
     setStudentData
 } = invitationSlice.actions;
