@@ -21,7 +21,6 @@ export const InvitationPage = () => {
   const { modal: { isOpen, content, titleModal } } = useUI();
 
   useEffect(() => {
-    reloadStudent();
     students();
 
     const animation = new ScrollReveal({ reset: true, duration: 2000, delay: 1500 });
@@ -50,6 +49,7 @@ export const InvitationPage = () => {
   }, []);
 
   const students = async () => {
+    await reloadStudent();
     await getStudents();
   }
 
