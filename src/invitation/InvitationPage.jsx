@@ -17,7 +17,7 @@ import { Modal } from "./components/Modal";
 
 export const InvitationPage = () => {
 
-  const { getStudents, reloadStudent } = useGuest();
+  const { getStudents } = useGuest();
   const { modal: { isOpen, content, titleModal } } = useUI();
 
   useEffect(() => {
@@ -49,7 +49,6 @@ export const InvitationPage = () => {
   }, []);
 
   const students = async () => {
-    await reloadStudent();
     await getStudents();
   }
 
