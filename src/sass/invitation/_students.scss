@@ -1,0 +1,108 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.students {
+  
+  &__title {
+    font-size: 6.8rem;
+  }
+  
+  &__section {
+    position: relative;
+    padding: calc( v.$general-gap * 8 ) 0;
+
+    @include m.responsiveDesign( tab-port ) {
+    }
+
+  }
+
+  &__lightBox {
+    width: 100rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      top: 0;
+      left: 50%;
+      transform: rotate(-45deg);
+
+      @include m.responsiveDesign( phone ) {
+        left: 10%;
+      }
+    }
+    
+    &--2 {
+      top: 50%;
+      right: 50%;
+      transform: rotate(-5deg);
+
+      @include m.responsiveDesign( phone ) {
+        z-index: -1;
+        bottom: -10%;
+        right: 10%;
+      }
+    }
+  }
+
+  &__light {
+    width: 100%;
+  }
+
+  &__item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-family: v.$font-heading;
+
+    @include m.responsiveDesign( tab-port ) {
+      font-size: 3rem;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 80%;
+    object-fit: cover;
+
+    @include m.responsiveDesign( tab-port ) {
+      width: 90%;
+    }
+
+    @include m.responsiveDesign( phone ) {
+      width: 100%;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+
+    @include m.responsiveDesign( phone ) {
+      margin-top: 3.2rem;
+    }
+  }
+
+}

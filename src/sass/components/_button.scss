@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.btn {
+
+  cursor: pointer;
+  transition: all .4s ease;
+  width: 100%;
+  text-align: center;
+  padding: .5rem;
+  font-weight: bold;
+  font-size: 2rem;
+  border: 5px solid transparent;
+
+  @include m.responsiveDesign( tab-port ) {
+    font-size: 2.4rem;
+  }
+  &--search {
+    background-color: v.$orange-color;
+    color: v.$black-color;
+
+    &:hover {
+      border-color: v.$orange-color;
+      background-color: v.$gray-color;
+    }
+
+  }
+
+  &--silver {
+    display: inline-block;
+    color: v.$black-color;
+    width: fit-content;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    @include m.responsiveDesign( desktop ) {
+      width: 30rem;
+    }
+  }
+
+} 

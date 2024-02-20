@@ -1,0 +1,96 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.section-space {
+  padding-bottom: calc( v.$general-gap * 5 );
+}
+
+.gradient-1 {
+  background: v.$yellow-color;
+  background: -webkit-linear-gradient(to left, v.$yellow-color, v.$orange-color);
+  background: linear-gradient(to left, v.$yellow-color, v.$orange-color);
+}
+
+.gradient-2 {
+  background: #FFEFBA; 
+  background: -webkit-linear-gradient(to left, #FFFFFF, #FFEFBA);  
+  background: linear-gradient(to left, #FFFFFF, #FFEFBA); 
+}
+
+.gradient-3 {
+  background: #40E0D0;
+  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  
+  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); 
+}
+
+.gradient-4 {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);  
+  background: linear-gradient(to right, #414345, #232526); 
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.container {
+  width: 160rem;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-space {
+  margin-bottom: calc( v.$general-gap * 3 );
+}
+
+.border-left-none {
+  border-left: none;
+}
+
+.border-right-none {
+  border-right: none;
+}
+
+.border-bottom-none {
+  border-bottom: none;
+}
+
+.icon {
+  font-size: 3.2rem;
+  transition: all .4s;
+
+  &--modal {
+    cursor: pointer;
+    color: v.$gray-color;
+    font-size: 4.8rem;
+
+    @include m.responsiveDesign( tab-port ) {
+      font-size: 6.8rem;
+    }
+  }
+}
+
+.heading-section {
+  font-size: 4.8rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  line-height: 1.1;
+
+  @include m.responsiveDesign ( desktop ) {
+    font-size: 4rem;
+  }
+
+  @include m.responsiveDesign ( tab-port ) {
+    font-size: 5.2rem;
+  }
+
+  @include m.responsiveDesign( phone ) {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+}

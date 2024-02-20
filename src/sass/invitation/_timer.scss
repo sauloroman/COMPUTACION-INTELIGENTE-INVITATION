@@ -1,0 +1,91 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.timer {
+  
+  height: 80rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @include m.responsiveDesign( tab-port ) {
+    height: 100rem;
+  }
+
+  &__layout {
+    border-top: 5px solid v.$yellow-color;
+    border-bottom: 5px solid v.$yellow-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 120rem;
+    max-width: 95%;
+  }
+  
+
+  &__title {
+    text-align: center;
+    font-size: 6.4rem;
+    color: v.$gray-color;
+    padding-bottom: 5px !important;
+    border-bottom: 2px solid #fff;
+    margin-bottom: calc( v.$general-gap * 1.5 ) !important;
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include m.responsiveDesign( phone ) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+    }
+  }
+
+  &__box {
+    width: 20rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3.2rem;
+    border: 2px solid v.$yellow-color;
+
+    @include m.responsiveDesign( phone ) {
+      margin-right: 0;
+      margin-bottom: 3.2rem;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span {
+      font-size: 6.4rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+}

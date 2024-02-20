@@ -1,0 +1,203 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero {
+
+  height: 100vh;
+  padding: v.$general-gap;
+  padding-bottom: calc( v.$general-gap * 3 );
+
+  @include m.responsiveDesign( phone ) {
+    padding: calc( v.$general-gap / 2.5 );
+  }
+
+  &__color {
+    height: 100%;
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: v.$black-color;
+    padding: v.$general-gap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__congratulation {
+    font-size: 9.6rem;
+    text-align: center;
+
+    @include m.responsiveDesign( phone ) {
+      width: 100%;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__birrete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    margin-bottom: -20px;
+
+    &--1 {
+      @include m.responsiveDesign( tab-port ) {
+        width: 100%;
+      }
+    }
+
+    &--2 {
+      width: 60%;
+      
+      @include m.responsiveDesign( tab-port ) {
+        width: 65%;
+      }
+    }
+  }
+
+  &__generation {
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+
+    @include m.responsiveDesign( phone ) {
+      margin-top: 3.2rem;
+    }
+  }
+
+  &__flowers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+
+    @include m.responsiveDesign( tab-port ) {
+      margin-top: -70px;
+    }
+    
+    @include m.responsiveDesign( phone ) {
+      margin-top: -20px;
+    }
+
+    img {
+      width: 80rem;
+      object-fit: cover;
+      @include m.responsiveDesign( tab-port ) {
+        width: 70rem;
+      }
+    }
+
+  }
+
+  &__name {
+    font-size: 4.8rem;
+    text-align: center;
+    
+    @include m.responsiveDesign( phone ) {
+      font-size: 3.6rem;
+    }
+  }
+  
+  &__career {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 3.2rem;
+
+    @include m.responsiveDesign( phone ) {
+      margin: 2rem 0;
+      font-size: 3.2rem;
+      line-height: 1.2;
+    }
+  }
+
+  &__corner {
+    object-fit: cover;
+    width: 100rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: .6;
+    
+    &--1 {
+      bottom: 0;
+      right: 0;
+      transform: translateX(33%);
+
+      @include m.responsiveDesign( phone ) {
+        right: -12%;
+      }
+    }
+    
+    &--2 {
+      top: 0;
+      left: 0;
+      transform: rotate(-180deg) translateX(33%);
+
+      @include m.responsiveDesign( phone ) {
+        left: -12%;
+      }
+    }
+
+    img {
+      width: 60%;
+
+      @include m.responsiveDesign( tab-port ) {
+        width: 70%;
+      }
+
+      @include m.responsiveDesign( phone ) {
+        width: 40%;
+      }
+    }
+
+  }
+
+  &__light {
+    object-fit: cover;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      top: 5%;
+      right: 5%;
+      transform: translate(40%, -30%) rotate(-104deg);
+    }
+    
+    &--2 {
+      bottom: 5%;
+      left: 5%;
+      transform: translate(-45%, 15%) rotate(-150deg);
+    }
+
+    img {
+      width: 60%;
+
+      @include m.responsiveDesign( tab-port ) {
+        width: 80%;
+      }
+
+      @include m.responsiveDesign( phone ) {
+        width: 100%;
+      }
+    }
+  }
+
+}

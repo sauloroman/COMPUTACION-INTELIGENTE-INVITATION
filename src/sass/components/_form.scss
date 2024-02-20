@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.form {
+
+  width: 50rem;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  
+  @include m.responsiveDesign( tab-port ) {
+    width: 80rem;
+    max-width: 85%;
+  }
+
+  &__field {
+    margin-bottom: v.$general-gap;
+  }
+
+  &__label {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+
+    @include m.responsiveDesign( tab-port ) {
+      padding: 1.5rem 1rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__span {
+    display: block;
+    font-size: 1.4rem;
+    padding-top: 1.2rem;
+  }
+
+}

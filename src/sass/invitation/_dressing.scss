@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.dressing {
+
+  position: relative;
+  padding: calc( v.$general-gap * 3 ) 0;
+  border-bottom: 5px solid v.$yellow-color;
+
+  &__layout {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: .05;
+    height: 100%;
+  }
+
+  &__container {
+    padding: calc( v.$general-gap * 3 ) 0;
+  }
+
+  &__title {
+    font-size: 6.4rem;
+    text-align: center;
+  }
+
+  &__code {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: v.$general-gap ;
+    @include m.responsiveDesign( phone ) {
+      margin-bottom: calc( v.$general-gap * 2);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );
+    place-items: center;
+    padding: 3.2rem;
+
+    @include m.responsiveDesign( phone ) {
+      grid-template-columns: 1fr;
+      gap: 9.6rem;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__text {
+    margin-top: auto;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+  }
+
+  &__imageBox {
+    margin-bottom: 2.4rem;
+  }
+
+  &__image {
+    width: 20rem;;
+  }
+
+}
