@@ -64,6 +64,7 @@ export const Timer = () => {
             <p>Segundos</p>
           </div>
         </div>
+        <p className="timer__foot gradient-2 text-gradient">Algo inolvidable está a punto de suceder</p>
       </div>
     </section>
   )

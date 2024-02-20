@@ -89,9 +89,14 @@
       font-size: 3.2rem;
     }
 
+    @include m.responsiveDesign( phone ) {
+      margin-top: -5px;
+    }
+
   }
 
   &__text {
+    text-align: center;
     font-size: 2rem;
   }
 }
