@@ -3,6 +3,7 @@ import { useGuest } from "../hooks"
 import { InvitationPage } from "../invitation/InvitationPage";
 import { SearchPage } from '../search/SearchPage';
 import { useEffect } from "react";
+import { NotFound } from "../search/NotFound";
 
 export const AppRouter = () => {
 
@@ -19,15 +20,13 @@ export const AppRouter = () => {
         ? (
           <>
             <Route path="/invitation" element={<InvitationPage />} />
-            <Route path="/" element={<SearchPage /> } />
-            <Route path="/*" element={<Navigate to='/invitation' />}/>
+            <Route path="/*" element={<NotFound />}/>
           </>
         )
         : (
           <>
             <Route path="/" element={<SearchPage /> } />
-            <Route path="/invitation" element={<InvitationPage />} />
-            <Route path="/*" element={<Navigate to='/' />}/>
+            <Route path="/*" element={<NotFound />}/>
           </>
         ) 
       }
