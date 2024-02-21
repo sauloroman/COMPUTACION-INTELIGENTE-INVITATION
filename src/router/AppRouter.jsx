@@ -19,12 +19,14 @@ export const AppRouter = () => {
         ? (
           <>
             <Route path="/invitation" element={<InvitationPage />} />
+            <Route path="/" element={<SearchPage /> } />
             <Route path="/*" element={<Navigate to='/invitation' />}/>
           </>
         )
         : (
           <>
             <Route path="/" element={<SearchPage /> } />
+            <Route path="/invitation" element={<InvitationPage />} />
             <Route path="/*" element={<Navigate to='/' />}/>
           </>
         ) 
