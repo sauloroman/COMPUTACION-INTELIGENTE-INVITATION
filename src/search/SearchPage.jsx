@@ -20,8 +20,8 @@ export const SearchPage = () => {
   const onSearchGuest = async ( e ) => {
     e.preventDefault();
 
-    if ( studentId.trim().length !== 20  ) {
-      createError('La clave debe contener 20 caracteres')
+    if ( studentId.trim().length !== 4  ) {
+      createError('La clave debe contener 4 caracteres')
       return;
     };
 
