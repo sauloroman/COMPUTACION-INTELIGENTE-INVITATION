@@ -6,7 +6,6 @@ import paintBlue from '../assets/images/paint-3.png';
 import paintGolden from '../assets/images/light-1.png';
 import { useForm, useGuest, useUI } from '../hooks';
 import { Error } from './components/Error';
-import { useNavigate } from 'react-router-dom';
 
 const formData = {
   studentId: ''
@@ -17,7 +16,6 @@ export const SearchPage = () => {
   const { studentId, onInputChange, onResetForm } = useForm( formData );
   const { error, isLoading, createError } = useUI();
   const { invitationOf } = useGuest();
-  const navigate = useNavigate();
 
   const onSearchGuest = async ( e ) => {
     e.preventDefault();
@@ -27,13 +25,7 @@ export const SearchPage = () => {
       return;
     };
 
-    try {
-      await invitationOf( studentId );
-      navigate('/invitation', { replace: true })
-    } catch (error) {
-      navigate('/', { replace: true })
-    }
-
+    await invitationOf( studentId );
     onResetForm();
   }
 
