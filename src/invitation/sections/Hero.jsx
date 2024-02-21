@@ -10,7 +10,7 @@ export const Hero = () => {
   const { studentName } = useGuest();
 
   return (
-    <section className="hero">
+    <section className="hero" id='hero'>
       <div className="gradient-1 hero__color animate__animated animate__fadeInDown">
         <div className="hero__content">
           <div className="hero__box">

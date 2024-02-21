@@ -14,6 +14,7 @@ import {
   Promo
 } from "./sections"
 import { Modal } from "./components/Modal";
+import { ButtonUp } from "./components/ButtonUp";
 
 export const InvitationPage = () => {
 
@@ -57,6 +58,7 @@ export const InvitationPage = () => {
       <Ticket />
       <Footer />
       <Promo /> 
+      <ButtonUp />
       { isOpen && <Modal titleModal={ titleModal } contentModal={ content } /> }
     </>
   )
