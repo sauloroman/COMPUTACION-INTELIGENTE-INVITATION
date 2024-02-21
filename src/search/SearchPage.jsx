@@ -6,6 +6,7 @@ import paintBlue from '../assets/images/paint-3.png';
 import paintGolden from '../assets/images/light-1.png';
 import { useForm, useGuest, useUI } from '../hooks';
 import { Error } from './components/Error';
+import { useNavigate } from 'react-router-dom';
 
 const formData = {
   studentId: ''
@@ -16,16 +17,23 @@ export const SearchPage = () => {
   const { studentId, onInputChange, onResetForm } = useForm( formData );
   const { error, isLoading, createError } = useUI();
   const { invitationOf } = useGuest();
+  const navigate = useNavigate();
 
-  const onSearchGuest = ( e ) => {
+  const onSearchGuest = async ( e ) => {
     e.preventDefault();
 
     if ( studentId.trim().length !== 20  ) {
       createError('La clave debe contener 20 caracteres')
       return;
     };
-  
-    invitationOf( studentId );
+
+    try {
+      await invitationOf( studentId );
+      navigate('/invitation', { replace: true })
+    } catch (error) {
+      navigate('/', { replace: true })
+    }
+
     onResetForm();
   }
 

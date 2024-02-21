@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useGuest, useUI } from "../hooks";
+import { useUI } from "../hooks";
 import { 
   Gratitude, 
   Hero, 
@@ -17,12 +17,9 @@ import { Modal } from "./components/Modal";
 
 export const InvitationPage = () => {
 
-  const { getStudents } = useGuest();
   const { modal: { isOpen, content, titleModal } } = useUI();
 
   useEffect(() => {
-    students();
-
     const animation = new ScrollReveal({ reset: true, duration: 2000, delay: 1500 });
     animation.reveal('.layout-grid', { distance: '15px', origin: 'bottom', scale: 1.05 } );
     animation.reveal('.hero__congratulation', { distance: '25px', origin: 'left', scale: 1.2 } );
@@ -45,12 +42,7 @@ export const InvitationPage = () => {
     animation.reveal('.footer__generation', { distance: '25px', origin: 'bottom', scale: 1.05 } );
     animation.reveal('.footer__career', { distance: '25px', origin: 'bottom', scale: 1.05 } );
     animation.reveal('.ticket__container', { distance: '25px', origin: 'bottom', scale: 1.5 } );
-  
   }, []);
-
-  const students = async () => {
-    await getStudents();
-  }
 
   return (
     <>

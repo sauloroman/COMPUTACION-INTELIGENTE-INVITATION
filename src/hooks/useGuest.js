@@ -12,7 +12,6 @@ export const useGuest = () => {
   const dispatch = useDispatch();
 
   const invitationOf = async ( studentId = '' ) => {
-    if ( !studentId ) throw new Error('Clave necesaria');
     dispatch( setIsLoading( true ) );
   
     try {

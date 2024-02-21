@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import birrete from '../../assets/images/icon.png'
 import decorationGraduated from '../../assets/images/decoration-graduated.png'
 import lightImage from '../../assets/images/light-2.png';
@@ -7,7 +8,11 @@ import { useGuest, useUI } from '../../hooks'
 export const Students = () => {
 
   const { showModal } = useUI();
-  const { studentsName } = useGuest();
+  const { studentsName, getStudents } = useGuest();
+
+  useEffect(() => {
+    getStudents();
+  }, []);
 
   return (
     <section className='students__section'>
