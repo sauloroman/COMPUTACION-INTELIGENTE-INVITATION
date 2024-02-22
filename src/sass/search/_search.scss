@@ -98,7 +98,10 @@
   }
   
   &__logo {
-    width: 60%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: v.$general-gap;
     
     @include m.responsiveDesign( tab-port ) {

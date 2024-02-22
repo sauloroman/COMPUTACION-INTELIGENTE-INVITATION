@@ -9,7 +9,6 @@ export const AppRouter = () => {
   const { studentId, reloadStudent } = useGuest();
 
   useEffect(() => {
-    console.log('recarga')
     reloadStudent();
   }, []);
   
