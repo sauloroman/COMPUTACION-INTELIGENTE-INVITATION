@@ -30,7 +30,7 @@
   }
 
   &__congratulation {
-    font-size: 9.6rem;
+    font-size: 12rem;
     text-align: center;
 
     @include m.responsiveDesign( phone ) {
@@ -108,7 +108,7 @@
     text-align: center;
     
     @include m.responsiveDesign( phone ) {
-      font-size: 3.6rem;
+      font-size: 4.2rem;
     }
   }
   
@@ -120,7 +120,7 @@
 
     @include m.responsiveDesign( phone ) {
       margin: 2rem 0;
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       line-height: 1.2;
     }
   }

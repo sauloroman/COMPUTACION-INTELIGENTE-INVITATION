@@ -32,9 +32,6 @@ export const SearchPage = () => {
   return (
     <div className='search'  style={{ backgroundImage: `url( ${backgroundPaper} )` }}>
       <section className="search__content">
-        <div className="search__generation">
-          <h2 className='search__congratulations text-gradient gradient-1 animate__animated animate__slideInDown'>Feliz graduación</h2>
-        </div>
         <figure className="search__logo animate__animated animate__slideInUp">
           <img className='search__image' src={ logoGraduation } alt="Logo Graduation" />
         </figure>
