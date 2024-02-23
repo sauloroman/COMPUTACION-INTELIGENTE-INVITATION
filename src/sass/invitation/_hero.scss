@@ -30,7 +30,8 @@
   }
 
   &__congratulation {
-    font-size: 12rem;
+    font-size: 13rem;
+    font-weight: 600;
     text-align: center;
 
     @include m.responsiveDesign( phone ) {
@@ -96,9 +97,15 @@
     img {
       width: 80rem;
       object-fit: cover;
+
       @include m.responsiveDesign( tab-port ) {
         width: 70rem;
       }
+
+      @include m.responsiveDesign( phone ) {
+        width: 40rem;
+      }
+
     }
 
   }
