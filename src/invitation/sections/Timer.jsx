@@ -5,7 +5,7 @@ import timerLeaf from '../../assets/images/timer-leaf.png'
 
 export const Timer = () => {
 
-  const [targetDate, setTargetDate] = useState( Math.ceil((new Date('07/26/2024 20:00').getTime() - new Date()) * 0.001) );
+  const [targetDate, setTargetDate] = useState( Math.ceil((new Date('07/26/2024 20:30').getTime() - new Date()) * 0.001) );
   const [timeData, setTimeData] = useState({
     days:     0,
     hours:    0,
@@ -14,7 +14,7 @@ export const Timer = () => {
   })
 
   useEffect( () => {
-    setInterval( () => setTargetDate( Math.ceil((new Date('07/26/2024 20:00').getTime() - new Date()) * 0.001) ), 1000)
+    setInterval( () => setTargetDate( Math.ceil((new Date('07/26/2024 20:30').getTime() - new Date()) * 0.001) ), 1000)
   }, []);
 
   useEffect( () => {

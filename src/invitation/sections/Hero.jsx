@@ -17,7 +17,7 @@ export const Hero = () => {
         <p className="hero__text">Con cariño quiero invitarte a<br /> mi graduación</p>
         <p className="hero__date">26.07.24</p>
         <div className="flex-center">
-          <p className="hero__hour">Hora <span>08:00</span> PM</p>
+          <p className="hero__hour">Hora <span>08:30</span> PM</p>
         </div>
         <div className="hero__location">Lago del Marqués</div>
         <div className="hero__address">Hacienda Nueva, San Ignacio, <br />Aguascalientes, Ags</div>

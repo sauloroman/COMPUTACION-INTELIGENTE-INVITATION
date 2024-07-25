@@ -37,7 +37,7 @@ export const TicketPage = () => {
           <p className="ticket__dire">Presenta este código al llegar a <br /> recepción de tu evento <br /></p>
           <p className="ticket__dire">Este código es valido por la cantidad de boletos <br /> comprados y se actualiza al ser escaneado</p>
           <div className="ticket__place">
-            <p className="ticket__hour">26. 07. 24</p>
+            <p className="ticket__hour">26. 07. 24 | 08:30 PM</p>
             <img src={ lagoDelMarquesMessage } alt="Lago del Marques Image" className="ticket__location" />
             <p className="ticket__dire">Hacienda Nueva, San Ignacio, 20313 <br /> Aguascalientes, Ags.</p>
           </div>

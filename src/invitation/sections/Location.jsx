@@ -16,7 +16,7 @@ export const Location = () => {
           <p className="location__type">Recepción del evento</p>
         </div>
         <p className="location__address">Hacienda Nueva, San Ignacio, 20313 Aguascalientes, Ags.</p>
-        <p className="location__hour">08:00 PM</p>
+        <p className="location__hour">08:30 PM</p>
         <button className="location__button btn btn--golden">
           <a target='_blank' href="https://maps.app.goo.gl/EwWGedy9AXw2hR8c6">Ver ubicación</a>
         </button>
