@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.dress {
+  
+  margin-top: 4rem;
+  border-top: 1px solid v.$color-pink-dark;
+  border-bottom: 1px solid v.$color-pink-dark;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  &__text {
+    text-align: center;
+    font-family: v.$font-alter;
+    font-weight: 200;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+
+}

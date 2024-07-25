@@ -1,35 +1,43 @@
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useGuest } from "../hooks"
 import { InvitationPage } from "../invitation/InvitationPage";
 import { SearchPage } from '../search/SearchPage';
-import { useEffect } from "react";
+import { useTicket } from "../hooks";
+import { TicketPage } from "../invitation/ticket/TicketPage";
+import { StudentsPage } from "../invitation/students/StudentsPage";
+import { Error } from "../invitation/components/Error";
 
 export const AppRouter = () => {
 
-  const { studentId, reloadStudent } = useGuest();
-
+  const { ticket: { id }, renewTicket } = useTicket();
+  
   useEffect(() => {
-    reloadStudent();
+    renewTicket();
   }, []);
   
   return (
-    <Routes>
-      {
-        studentId
-        ? (
-          <>
-            <Route path="/invitation" element={<InvitationPage />} />
-            <Route path="/*" element={<Navigate to='/invitation' />}/>
-          </>
-        )
-        : (
-          <>
-            <Route path="/" element={<SearchPage /> } />
-            <Route path="/*" element={<Navigate to='/' />}/>
-          </>
-        ) 
-      }
-      <Route path="/*" element={<Navigate to='/' />}/>
-    </Routes>
+    <>
+      <Routes>
+        {
+          id
+          ? (
+            <>
+              <Route path="/invitation" element={<InvitationPage />} />
+              <Route path="/ticket" element={<TicketPage />} />
+              <Route path="/students" element={<StudentsPage />} />
+              <Route path="/*" element={<Navigate to='/invitation' />}/>
+            </>
+            )
+            : (
+            <>
+              <Route path="/" element={<SearchPage /> } />
+              <Route path="/*" element={<Navigate to='/' />}/>
+            </>
+            ) 
+        }
+        <Route path="/*" element={<Navigate to='/' />}/>
+      </Routes>
+     <Error />
+    </>
   )
 }

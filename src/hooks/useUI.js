@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { resetError, resetModal, setError, setIsLoading, setModal } from "../store/ui/ui.slice"
+import { setError, setIsLoading, setMenu, setModal } from "../store/ui/ui.slice"
 
 export const useUI = () => {
   
-  const { error, isLoading, modal } = useSelector( store => store.ui )
+  const { error, isLoading, modal, menu } = useSelector( store => store.ui )
   const dispatch = useDispatch();
 
   const loading = () => {
@@ -15,32 +15,43 @@ export const useUI = () => {
   } 
 
   const createError = ( errorMessage = '' ) => {
-    dispatch( setError( { hasError: true, errorMessage } ) );
+    dispatch( setError( { isOpen: true, errorMessage } ) );
   }
 
-  const clearError = () => {
-    dispatch(resetError());
+  const deleteError = () => {
+    dispatch( setError({ isOpen: false, errorMessage: '' }) )
   }
 
-  const showModal = ( contentModal = '', titleModal = '' ) => {
-    dispatch( setModal({ isOpen: true, content: contentModal, titleModal }) )
+  const showModal = () => {
+    dispatch( setModal( true ) )
   }
 
   const closeModal = () => {
-    dispatch( resetModal() )
+    dispatch( setModal( false ) )
+  }
+
+  const openMenu = () => {
+    dispatch( setMenu( true ) )
+  }
+
+  const closeMenu = () => {
+    dispatch( setMenu( false ) )
   }
 
   return {
     error,
     isLoading,
     modal,
+    menu,
 
     loading,
     noLoading,
     createError,
-    clearError,
+    deleteError,
     showModal,
-    closeModal
+    closeModal,
+    openMenu,
+    closeMenu,
   }
 
 }

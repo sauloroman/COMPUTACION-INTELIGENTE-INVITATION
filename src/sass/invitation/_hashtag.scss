@@ -2,66 +2,57 @@
 @use '../abstracts/mixins' as m;
 
 .hashtag {
-  padding-top: calc( v.$general-gap * 5 );
-  border-bottom: 5px solid v.$yellow-color;
-  
-  &__wave {
-    margin-bottom: -40rem;
-    transform: rotate(180deg);
-  }
 
-  &__section {
-    text-align: center;
-    font-size: 3.2rem;
-    margin-bottom: 4.8rem;
-  }
+  padding-top: 4.8rem;
 
-  &__title {
-    text-align: center;
-    font-size: 6.4rem;
-    margin-bottom: 3.2rem;
-  }
-
-  &__text,
-  &__hash {
-    text-align: center;
-    font-size: 2rem;
+  &__container {
+    border-radius: 5px;
+    margin-bottom: 4rem;
+    margin-top: -3rem;
     margin: 0 auto;
-    line-height: 2;
-    width: 60%;
-
-    @include m.responsiveDesign( tab-port ) {
-      width: 80%;
-    }
-
-    span {
-      font-weight: bold;
-      color: v.$orange-color;
-    }
-  }
-
-  &__hash {
-    font-size: 4.4rem;
-    font-family: v.$font-heading;
-    padding: 6.4rem 0;
-  }
-
-  &__icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem 0;
+    width: 90%;
   }
 
   &__icon {
-    color: #fff;
-    font-size: 6.4rem;
-    margin-right: 2.4rem;
-    transition: all .4s ease-out;
-    cursor: pointer;
+    width: 6rem;
+    margin-bottom: 2rem;
 
-    &:hover {
-      color: v.$orange-color;
+    &--2 {
+      transform: rotate(-180deg);
     }
+  }
+
+  &__text {
+    font-family: v.$font-alter;
+    font-weight: 200;
+    line-height: 2;
+    margin: 2rem auto;
+    text-align: center;
+    width: 50%;
+  }
+
+  &__hash {
+    font-family: v.$font-alter;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  &__top {
+    margin-top: -5rem;
+  }
+
+  &__square {
+    background-color: v.$color-pink-dark;
+    height: 4rem;
+    opacity: .5;
+    width: 4rem;
+  }
+
+  &__line {
+    @include m.line( 10rem, v.$color-pink-dark );
   }
 
 } 

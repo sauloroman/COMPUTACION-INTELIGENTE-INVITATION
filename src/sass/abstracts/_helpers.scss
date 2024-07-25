@@ -2,7 +2,45 @@
 @use './mixins' as m;
 
 .section-space {
-  padding-bottom: calc( v.$general-gap * 5 );
+  padding: calc( v.$general-gap * 1.5 ) 0;
+}
+
+.mb-4 {
+  margin-bottom: 4.8rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mr-3 {
+  margin-right: 3rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-golden {
+  color: v.$color-golden;
+  font-weight: 700;
+}
+
+.text-wrong {
+  color: v.$color-error;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .gradient-1 {
@@ -93,4 +131,46 @@
     font-size: 6.2rem;
     margin-bottom: 2rem;
   }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
 }

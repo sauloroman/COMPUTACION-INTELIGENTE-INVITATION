@@ -1,28 +1,42 @@
 import { useUI } from "../../hooks/useUI"
-import perga from '../../assets/images/perga.png'
+import { useTicket } from "../../hooks";
+import croquisMesasImage from '../../assets/images/lago-del-marques-layout.png';
+import tablesMessage from '../../assets/images/tables-messages.png';
 
-export const Modal = ({ contentModal, titleModal }) => {
+export const Modal = () => {
   
   const { closeModal } = useUI();
+  const { ticket: { table, name, adultsQuantity, adultsCounter, kidsQuantity, kidsCounter, qrCode } } = useTicket();
 
   return (
-    <div className="modal animate__animated animate__fadeIn">
-      <div className="modal__content">
-        <div className="modal__border gradient-1"></div>
-        <main className="modal__main">
+    <div className="modal animate__animated animate__fadeIn animate__slow flex-column-center">
+      <div className="modal__container">
+        <div className="modal__box">
           <header className="modal__header">
-            <h2 className="modal__title gradient-1 text-gradient">{ titleModal }</h2>
-            <i onClick={ closeModal } className='bx bx-x icon icon--modal'></i>
+            <h2 className="modal__title">Distribución</h2>
+            <button onClick={ closeModal } className="btn btn--pink modal__button">Cerrar</button>
           </header>
-          <ul className="modal__list">
-            { contentModal.map( studentName => (
-              <li className="modal__item">{studentName}</li>  
-            )) }
-          </ul>
-          <figure className="modal__figure">
-            <img src={ perga } alt="Perga image" className="modal__img" />
-          </figure>
-        </main>
+          <div className="modal__content">
+            <div className="flex-center">
+              <img src={ tablesMessage } alt="Ubica tu mesa texto" className="modal__message" />
+            </div>
+            <p className="modal__name">{ name }</p>
+            <div className="modal__line"></div>
+            <div className="flex-center mb-4">
+              <img src={ croquisMesasImage } alt="Imagen de la distribución de mesas para el evento" className="modal__imae" />
+            </div>
+            <div className="modal__low">
+              <div className="modal__information">
+                <p className="modal__top">Mesa: <span>{!table ? "Por asignar" : table}</span></p>
+                <p className="modal__top">Adultos: <span>{ adultsQuantity - adultsCounter }</span></p>
+                <p className="modal__top">Infantes: <span>{ kidsQuantity - kidsCounter }</span></p>
+              </div>
+              <div className="flex-right">
+                <img src={ qrCode } alt="Codigo qr small" className="modal__qr" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

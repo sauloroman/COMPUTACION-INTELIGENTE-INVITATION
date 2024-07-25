@@ -1,17 +1,36 @@
 @use '../abstracts/variables' as v;
 
-.promo {
-  padding: 5rem;
+.footer {
+  margin-top: 8rem;
+  padding: 0 1rem;
   display: flex;
-  justify-content: center;
-  
-  &__info {
-    width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: v.$color-pink;
+  font-family: v.$font-alter;
+  font-weight: 200;
+
+  a {
+    color: inherit
+  }
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__content, a {
+    font-size: 1rem;
     text-align: center;
   }
 
-  &__title {
-    width: 100%;
-    color: v.$gray-color;
+  &__button {
+    text-align: center;
+    margin-top: .5rem;
+    padding: .3rem;
+    width: fit-content;
+    letter-spacing: 1px;
+    font-family: v.$font-alter;    
+    background-color: v.$color-golden-dark;
+    text-transform: unset;
   }
 }

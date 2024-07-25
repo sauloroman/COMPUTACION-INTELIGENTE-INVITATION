@@ -1,69 +1,77 @@
-import logoGraduation from '../assets/images/cover-login.png';
-import backgroundPaper from '../assets/images/background.png';
-import paintBlack from '../assets/images/paint-1.png';
-import paintPink from '../assets/images/paint-2.png';
-import paintBlue from '../assets/images/paint-3.png';
-import paintGolden from '../assets/images/light-1.png';
-import { useForm, useGuest, useUI } from '../hooks';
-import { Error } from './components/Error';
+import { useState } from 'react';
+import loginMessage from '../assets/images/hero-message.png';
+import { useForm, useTicket } from '../hooks';
 
 const formData = {
-  studentId: ''
+  keyPass: ''
+}
+
+const formValidations = {
+  keyPass: [ value => value.length > 0, 'La clave es necesaria']
 }
 
 export const SearchPage = () => {
 
-  const { studentId, onInputChange, onResetForm } = useForm( formData );
-  const { error, isLoading, createError } = useUI();
-  const { invitationOf } = useGuest();
+  const { keyPass, keyPassValid, onInputChange, onResetForm, isFormValid } = useForm( formData, formValidations );
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const { getTicket } = useTicket();
 
-  const onSearchGuest = async ( e ) => {
+  const onSearchTicket = ( e ) => {
     e.preventDefault();
+    setIsFormSubmitted( true );
 
-    if ( studentId.trim().length !== 4  ) {
-      createError('La clave debe contener 4 caracteres')
-      return;
-    };
+    if ( !isFormValid ) return;
 
-    await invitationOf( studentId );
+    getTicket( keyPass )
+
+    setIsFormSubmitted( false );
     onResetForm();
   }
 
   return (
-    <div className='search'  style={{ backgroundImage: `url( ${backgroundPaper} )` }}>
-      <section className="search__content">
-        <figure className="search__logo animate__animated animate__slideInUp">
-          <img className='search__image' src={ logoGraduation } alt="Logo Graduation" />
-        </figure>
-        <form onSubmit={ onSearchGuest } className='search__form form'>
-          <div className="form__field animate__animated animate__slideInLeft">
-            <label className='form__label search__label' htmlFor="studentId">Introduce tu clave</label>
+    <div className='search'>
+      <div className="search__container animate__animated animate__fadeIn animate__slower">
+        <p className="heading__section text-white search__text">Nuestra Graduación</p>
+        <div className="flex-center">
+          <div className="search__line"></div>
+        </div>
+        <div className="flex-center">
+          <img src={ loginMessage } alt="" className="search__image" />
+        </div>
+        <div className="flex-center">
+          <div className="search__line"></div>
+        </div>
+        <p className="heading__section search__text mt-2">Celebra con nosotros</p>
+        <p className="search__dire">Ingresa tu clave de invitación para buscar tus pases digitales</p>
+
+        <form onSubmit={ onSearchTicket } className="form search__form">
+          <div className="form__field">
+            <label 
+              htmlFor="keyPass" 
+              className="form__label">
+              <p>Clave</p>
+              <span
+                className={`form__span ${
+                  !isFormValid && isFormSubmitted ? 'text-wrong' : null
+                }`}
+              >
+                {keyPassValid}
+              </span>
+            </label>
             <input 
-              name='studentId'
-              value={ studentId }
               onChange={ onInputChange }
-              placeholder='Tu clave'
-              id='studentId'
-              className='form__input search__input'
-              type="text"  
+              name='keyPass'
+              value={keyPass}
+              id='keyPass' 
+              type="text" 
+              className="form__input" 
             />
-            { error.hasError && <Error message={ error.errorMessage } />}
           </div>
-          <input value={ !isLoading ? "Buscar mi invitación" : "Cargando..." } type='submit' className='search__button btn btn--search animate__animated animate__slideInRight' />
+          <div className="search__button">
+            <button type='submit' className="btn btn--golden">Comenzar Busqueda</button>
+          </div>
         </form>
-        <div className="search__paint search__paint--1">
-          <img className='search__paint-img' src={ paintBlack } alt="Black ballons" />
-        </div>
-        <div className="search__paint search__paint--2">
-          <img className='search__paint-img' src={ paintPink } alt="Black ballons" />
-        </div>
-        <div className="search__paint search__paint--3">
-          <img className='search__paint-img' src={ paintBlue } alt="Black ballons" />
-        </div>
-        <div className="search__paint search__paint--4">
-          <img className='search__paint-img' src={ paintGolden } alt="Black ballons" />
-        </div>
-      </section>
+      </div>
     </div>
   )
 } 

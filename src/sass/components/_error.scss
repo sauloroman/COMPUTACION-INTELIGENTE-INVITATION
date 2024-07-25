@@ -2,21 +2,38 @@
 
 .error {
 
-  border-radius: 10px;
-  padding: 1.2rem 1rem;
-  margin-top: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: v.$purple-color;
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 90%;
+  background-color: v.$color-pink;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba( 0, 0, 0, .3);
+  transition: all .4s ease-out;
 
-  &__icon {
-    font-size: 2.4rem;
-    margin-right: calc( v.$general-gap / 3 );
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &__text {
-    font-weight: bold;
+  &__show {
+    top: 2%
+  }
+
+  &__hide {
+    top: -100%
+  }
+
+  &__icon {
+    font-size: 3.2rem;
+  }
+
+  &__message {
+    font-size: 2rem;
   }
 
 }

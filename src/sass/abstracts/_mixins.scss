@@ -25,3 +25,26 @@
   }
 
 }
+
+@mixin line( $height, $color ) {
+  display: block;
+  margin: 0 auto;
+  width: 1px;
+  height: $height;
+  background-color: $color;
+  position: relative;
+  transition: all .4s ease-out;
+   
+  &::after {
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-45%, 5%);
+  }
+}

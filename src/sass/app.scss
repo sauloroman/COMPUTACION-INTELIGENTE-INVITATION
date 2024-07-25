@@ -5,24 +5,31 @@
 @use './components/button';
 @use './components/layout-grid';
 @use './components/error';
-@use './components/slider';
 @use './components/modal';
-@use './components/spinner';
+@use './components/heading-section';
+@use './components/aside-bar';
 
 @use './base/globals';
 @use './base/typography';
 
 // INVITATION
 @use './invitation/hero';
+@use './invitation/student';
+@use './invitation/location';
 @use './invitation/timer';
-@use './invitation/event';
+@use './invitation/dress';
 @use './invitation/students';
-@use './invitation/dressing';
+@use './invitation/itinerary';
 @use './invitation/hashtag';
-@use './invitation/ticket';
-@use './invitation/footer';
 @use './invitation/promo';
 
+// STUDENTS PAGE
+@use './studentsPage/students-page';
+
+// TICKET PAGE
+@use './ticketPage/ticket-page';
+
+// SEARCH PAGE
 @use './search/search';
 @use './search/not-found';
 

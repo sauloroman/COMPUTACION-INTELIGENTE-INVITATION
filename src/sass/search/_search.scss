@@ -3,174 +3,60 @@
 
 .search {
   
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-  
-  &__paint {
-    position: absolute;
-  }
-  
-  &__paint--1 {
-    width: 40%;
-    right: 5%;
-    top: 0;
+  padding: 7rem 0;
 
-    @include m.responsiveDesign( tab-land ) {
-      right: -10%;
-      width: 60%;
-    }
-
-    @include m.responsiveDesign( tab-port ) {
-      right: -15%;
-      width: 80%;
-    }
-
-  }
-  
-  &__paint--2 {
-    opacity: .5;
-    width: 30%;
-    left: 10%;
-    bottom: 0;
-
-    @include m.responsiveDesign( tab-land ) {
-      left: 0%;
-      width: 40%;
-    }
-
-    @include m.responsiveDesign( tab-port ) {
-      width: 50%;
-    }
-  }
-  
-  &__paint--3 {
-    opacity: .5;
-    width: 30%;
-    left: 10%;
-    top: 10%;
-
-    @include m.responsiveDesign( tab-land ) {
-      left: 0;
-      width: 45%;
-    }
-
-    @include m.responsiveDesign( tab-port ) {
-      left: -5%;
-      width: 65%;
-    }
-
-  }
-  
-  &__paint--4 {
-    opacity: .5;
-    width: 40%;
-    left: 55%;
-    bottom: 0%;
-
-    @include m.responsiveDesign( tab-land ) {
-      width: 50%;
-    }
-
-    @include m.responsiveDesign( tab-port ) {
-      width: 60%;
-    }
-  }
-  
-  &__content {
+  &__container {
     height: 100%;
-    margin: 0 auto;
-    width: 180rem;
-    max-width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-left: 5px solid v.$yellow-color;
-    border-right: 5px solid v.$yellow-color;
-    background-color: rgba(20, 21, 23, 0.95); 
-
-    @include m.responsiveDesign( phone ) {
-      max-width: 100%;
-    }
-
+    text-align: center
   }
-  
-  &__logo {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: v.$general-gap;
-    
-    @include m.responsiveDesign( tab-port ) {
-      width: 90%;
-    }
 
-    @include m.responsiveDesign( phone ) {
-      margin: v.$general-gap 0 calc( v.$general-gap * 2 );
-      width: 150%;
-    }
-
+  &__text {
+    margin-bottom: 2rem;
   }
-  
-  &__generation {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: v.$general-gap;
-  }
-  
-  &__congratulations {
-    font-size: 8rem;
-    border-bottom: 2px solid v.$gray-color;
 
-    @include m.responsiveDesign( phone ) {
-      font-size: 6rem;
-      text-align: center;
-      line-height: 1.2;
-      border-bottom: 0;
+  &__line {
+    @include m.line(7rem, rgba(255, 255, 255, .4));
+    &::after {
+      display: none;
     }
   }
-  
-  &__years {
-    font-size: 3.2rem;
+
+  &__dire {
+    margin: 6rem auto;
+    font-family: v.$font-alter;
+    letter-spacing: 2px;
+    font-weight: 200;
+    width: 70%;
+    line-height: 2;
   }
 
   &__form {
-    position: relative;
-    z-index: 2;
-  }
-  
-  &__ballons {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    bottom: 40%;
-    left: 70%;
-    transform: rotate(45deg);
-  }
+    width: 80%;
+    margin: 0 auto;
 
-  &__label {
-    display: block;
-    text-transform: uppercase;
-    font-size: 2.4rem;
-    font-weight: 500;
-    letter-spacing: 5px;
-    margin-bottom: 1.2rem;
-
-    @include m.responsiveDesign( phone ) {
-      font-size: 2rem;
+    .form__field {
+      text-align: left;
+      font-family: v.$font-alter;
+      margin-bottom: 2rem;
     }
-  }
-  
-  &__input {
-    outline: none;
-    background-color: v.$gray-color;
-    border-radius: 10px;
-    box-shadow: 0 0 10px v.$orange-color;
+
+    .form__label {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+
+    .form__input {
+      padding: .7rem;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .search__button {
+      button { width: 100%;}
+    }
   }
 
 }

@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.student {
+
+  &__container {
+    padding: 2rem 0 4rem;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  &__name {
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 1.8rem;
+    font-family: v.$font-alter;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 3px;
+    padding-bottom: 2px;
+  }
+
+  &__text {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2;
+    font-family: v.$font-alter;
+    font-size: 1.4rem;
+    font-weight: 200;
+    margin-bottom: 4rem;
+  }
+
+}

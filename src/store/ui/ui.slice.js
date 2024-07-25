@@ -4,14 +4,15 @@ export const uiSlice = createSlice({
     name: 'ui',
     initialState: {
       error: {
-        hasError: false,
+        isOpen: false,
         errorMessage: ''
       },
       isLoading: false,
       modal: {
         isOpen: false,
-        content: '',
-        titleModal: '',
+      },
+      menu: {
+        isOpen: false,
       }
     },
     reducers: {
@@ -24,26 +25,31 @@ export const uiSlice = createSlice({
         state.error = payload;
       },
 
-      resetError: ( state, _ ) => {
-        state.error = {
-          hasError: false,
-          errorMessage: ''
-        }
-      },
-
       setModal: ( state, { payload }) => {
-        state.modal = payload;
+        state.modal.isOpen = payload;
       },
 
-      resetModal: ( state, _ ) => {
-        state.modal = {
+      setMenu: ( state, { payload } ) => {
+        state.menu.isOpen = payload;
+      },
+
+      resetUIState: ( state, _ ) => {
+        state.error = {
           isOpen: false,
-          content: '',
-          titleModal: ''
-        }
+          errorMessage: ''
+        };
+        state.isLoading = false;
+        state.modal = { isOpen: false }
+        state.menu = { isOpen: false }
       }
 
     }
 })
 
-export const { setIsLoading, setError, resetError, setModal, resetModal } = uiSlice.actions;
+export const { 
+  setIsLoading, 
+  setError, 
+  setModal, 
+  setMenu,
+  resetUIState,
+} = uiSlice.actions;

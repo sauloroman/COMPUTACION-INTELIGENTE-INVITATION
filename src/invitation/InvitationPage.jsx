@@ -1,65 +1,56 @@
 import { useEffect } from "react"
-import { useUI } from "../hooks";
+import { useTicket, useUI } from "../hooks";
 import { 
-  Gratitude, 
   Hero, 
   Location, 
-  Event, 
+  DressCode, 
   Students, 
   Timer, 
-  DressingCode,
   Hashtag,
-  Ticket,
-  Footer,
-  Promo
+  Promo,
+  Student,
+  Itinerary,
 } from "./sections"
-import { Modal } from "./components/Modal";
-import { ButtonUp } from "./components/ButtonUp";
+import { ButtonsNav } from "./components/ButtonsNav";
+import { AsideBar } from "./components/AsideBar";
 
 export const InvitationPage = () => {
 
-  const { modal: { isOpen, content, titleModal } } = useUI();
+  const { closeMenu } = useUI();
+  const { getTicketsOfEvent } = useTicket();
 
   useEffect(() => {
+    closeMenu();
+    getTicketsOfEvent();
     const animation = new ScrollReveal({ reset: true, duration: 2000, delay: 1500 });
-    animation.reveal('.layout-grid', { distance: '15px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.hero__congratulation', { distance: '25px', origin: 'left', scale: 1.2 } );
-    animation.reveal('.hero__birrete', { distance: '25px', origin: 'left', scale: 1.2 } );
-    animation.reveal('.hero__career', { distance: '25px', origin: 'right' } );
-    animation.reveal('.hero__name', { distance: '25px', origin: 'right' } );
-    animation.reveal('.hero__corner', { distance: '25px', origin: 'right' } );
-    animation.reveal('.hero__flowers', { distance: '25px', origin: 'bottom' } );
-    animation.reveal('.hero__generation', { distance: '25px', origin: 'bottom' } );
-    animation.reveal('.timer__title', { distance: '25px', origin: 'right', scale: 1.05 } );
-    animation.reveal('.timer__content' );
-    animation.reveal('.students__title', { distance: '25px', origin: 'top', scale: 1.05 } );
-    animation.reveal('.students__logo', { distance: '25px', origin: 'top', scale: 1.05 } );
-    animation.reveal('.slider', { distance: '25px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.hashtag__title', { distance: '25px', origin: 'top', scale: 1.05 } );
-    animation.reveal('.hashtag__hash', { distance: '25px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.dressing__title', { distance: '25px', origin: 'left', scale: 1.05 } );
-    animation.reveal('.dressing__image', { distance: '25px', origin: 'right', scale: 1.05 } );
-    animation.reveal('.footer__title', { distance: '25px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.footer__generation', { distance: '25px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.footer__career', { distance: '25px', origin: 'bottom', scale: 1.05 } );
-    animation.reveal('.ticket__container', { distance: '25px', origin: 'bottom', scale: 1.5 } );
+
+    animation.reveal('[ class*="__line"]', { origin: 'top', distance: '20px'})
+    animation.reveal('.student', { origin: 'left', distance: '100px'} );
+    animation.reveal('.timer', { scale: 1.2 })
+    animation.reveal('.location', { origin: 'right', distance: '100px'} );
+    animation.reveal('.hashtag', { origin: 'top', distance: '100px'} );
+    animation.reveal('.students', { origin: 'bottom', distance: '100px'} );
+    animation.reveal('.itinerary__item:nth-child(even)', { origin: 'left', distance: '50px'} );
+    animation.reveal('.itinerary__item:nth-child(odd)', { origin: 'right', distance: '50px'} );
+    animation.reveal('.dress', { scale: 1.2 })
+  
   }, []);
 
   return (
     <>
-      <Hero />
-      <Gratitude />
-      <Location />
-      <Timer />
-      <Students />
-      <Event />
-      <Hashtag />
-      <DressingCode />
-      <Ticket />
-      <Footer />
+      <div className="site">
+        <ButtonsNav />
+        <Hero />
+        <Student />
+        <Timer />
+        <Location />
+        <Hashtag />
+        <Students />
+        <Itinerary />
+        <DressCode />
+      </div>
+      <AsideBar />
       <Promo /> 
-      <ButtonUp />
-      { isOpen && <Modal titleModal={ titleModal } contentModal={ content } /> }
     </>
   )
 }

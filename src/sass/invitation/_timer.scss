@@ -3,96 +3,86 @@
 
 .timer {
   
-  height: 80rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  position: relative;
+  color: #000;
+  background-color: v.$color-pink;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
 
-  @include m.responsiveDesign( tab-port ) {
-    height: 100rem;
-  }
-
-  &__layout {
-    border-top: 5px solid v.$yellow-color;
-    border-bottom: 5px solid v.$yellow-color;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  &__top {
+    width: 3rem;
+    height: 3rem;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-  }
-
-  &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 120rem;
-    max-width: 95%;
+    margin-left: 3rem;
   }
   
-
-  &__title {
+  &__date {
     text-align: center;
-    font-size: 6.4rem;
-    color: v.$gray-color;
-    padding-bottom: 5px !important;
-    border-bottom: 2px solid #fff;
-    margin-bottom: calc( v.$general-gap * 1.5 ) !important;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #000;
+    font-family: v.$font-alter;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #1e1e1e;
   }
 
-  &__counter {
+  &__flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
-
-    @include m.responsiveDesign( phone ) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      place-items: center;
-    }
+    margin-bottom: 2rem;
   }
 
   &__box {
-    width: 20rem;
-    padding: 1.5rem;
+    padding: 0.5rem 2rem;
+  }
+
+  &__sign {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+
+  &__box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-right: 3.2rem;
-    border: 2px solid v.$yellow-color;
-
-    @include m.responsiveDesign( phone ) {
-      margin-right: 0;
-      margin-bottom: 3.2rem;
-    }
-    
-    &:last-child {
-      margin-right: 0;
-    }
-
-    span {
-      font-size: 6.4rem;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+    font-family: v.$font-alter;
+    margin-bottom: -3rem;
   }
 
-  &__foot {
-    padding: 2rem 0;
+  &__number {
+    font-size: 4rem;
+    font-weight: 200;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #aaa;
+    padding: .5rem 1rem;
+    margin-bottom: .8rem;
+  }
+
+  &__type {
+    font-size: 2rem;
+  }
+
+  &__text {
     text-align: center;
-    font-weight: bold;
-    font-size: 2.4rem;
+    padding: 4rem 0 0 0;
+    font-size: 1.6rem;
+    font-family: v.$font-alter;
+    font-weight: 300;
+  }
+
+  &__leaf {
+    opacity: .5;
+    margin-top: -3rem;
+    margin-bottom: -4rem;
+    max-width: 10rem;
+  }
+
+  &__line {
+    @include m.line( 10rem, v.$color-pink-dark );
   }
 
 }

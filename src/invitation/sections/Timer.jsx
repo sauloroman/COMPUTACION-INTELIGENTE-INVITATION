@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import videoProm from '../../assets/images/video-graduation.gif';
+import { HeadingSection } from '../components/HeadingSection';
+import timerMessage from '../../assets/images/timer-message.png';
+import timerLeaf from '../../assets/images/timer-leaf.png'
 
 export const Timer = () => {
 
@@ -42,30 +44,42 @@ export const Timer = () => {
   }, [targetDate]);
 
   return (
-    <section className="timer" style={{ backgroundImage: `url(${videoProm})`}}>
-      <div className="timer__layout"></div>
-      <div className="timer__content">
-        <h2 className="timer__title heading-section text-gradient gradient-1">Ya sólo faltan</h2>
-        <div className="timer__counter">
-          <div className="timer__box">
-            <span>{timeData.days <= 9 ? `0${timeData.days}`: timeData.days}</span>
-            <p>Días</p>
+    <>
+      <section id='timer' className="timer section-space">
+        <div className="timer__container container">
+          <div className="flex-left timer__top"></div>
+          <HeadingSection srcMessage={ timerMessage } title="La cuenta regresiva" titleColor='#000' titleWeight={ 700 } />
+          <div className="flex-center">
+            <div className="timer__date">26 de Julio, 2024</div>
           </div>
-          <div className="timer__box">
-            <span>{timeData.hours <= 9 ? `0${timeData.hours}`: timeData.hours}</span>
-            <p>Horas</p>
+          <div className="timer__flex">
+            <div className="timer__box">
+              <p className="timer__number">{ `${timeData.days}`.padStart(2, '0')}</p>
+              <p className='timer__type'>D</p>
+            </div>
+            <p className="timer__sign">:</p>
+            <div className="timer__box">
+              <p className="timer__number">{ `${timeData.hours}`.padStart(2, '0')}</p>
+              <p className='timer__type'>H</p>
+            </div>
+            <p className="timer__sign">:</p>
+            <div className="timer__box">
+              <p className="timer__number">{ `${timeData.minutes}`.padStart(2, '0')}</p>
+              <p className='timer__type'>M</p>
+            </div>
+            <p className="timer__sign">:</p>
+            <div className="timer__box">
+              <p className="timer__number">{ `${timeData.seconds}`.padStart(2, '0')}</p>
+              <p className='timer__type'>S</p>
+            </div>
           </div>
-          <div className="timer__box">
-            <span>{timeData.minutes <= 9 ? `0${timeData.minutes}`: timeData.minutes}</span>
-            <p>Minutos</p>
-          </div>
-          <div className="timer__box">
-            <span>{timeData.seconds <= 9 ? `0${timeData.seconds}`: timeData.seconds}</span>
-            <p>Segundos</p>
+          <p className="timer__text">Contamos cada segundo hasta el inicio de tu fiesta. <br />Un momento para recordar.</p>
+          <div className="flex-right">
+            <img src={ timerLeaf } alt="Timer leaf" className="heading-section__icon timer__leaf" />
           </div>
         </div>
-        <p className="timer__foot gradient-2 text-gradient">Algo inolvidable está a punto de suceder</p>
-      </div>
-    </section>
+      </section>
+      <div className="timer__line"></div>
+    </>
   )
 }

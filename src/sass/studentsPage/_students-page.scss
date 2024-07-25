@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.students-page {
+
+  &__message {
+    max-width: 50rem;
+    margin-bottom: -3rem
+  }
+
+  &__title {
+    margin-bottom: 4rem
+  }
+
+  &__line {
+    @include m.line( 8rem, v.$color-pink-dark );
+    margin-bottom: 4rem;
+  }
+
+  &__list {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  &__square {
+    width: 3rem;
+    height: 3rem;
+    background-color: v.$color-pink;
+    margin-left: 3rem;
+    opacity: .3;
+    margin-top: -10rem;
+
+    &--2 {
+      margin-top: 0;
+      margin-right: 3rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    text-align: center;
+    font-family: v.$font-alter;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+  }
+
+  &__button {
+    margin-top: -10rem;
+    width: 18rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    a {color: #000;}
+  }
+
+}

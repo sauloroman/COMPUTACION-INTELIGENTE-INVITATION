@@ -3,123 +3,106 @@
 
 .modal {
 
-  background-color: rgba(255, 255, 255, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
+  z-index: 999;
+  background-color: rgba( 0 0 0 / .9);
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 80%;
-    @include m.responsiveDesign( phone ) {
-      gap: 2rem;
-      margin-top: 4rem;
-      height: 85%;
-    }
-  }
-
-  &__item {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-
-    @include m.responsiveDesign( tab-port ) {
-      font-size: 1.8rem;
-    }
-
-    @include m.responsiveDesign( phone ) {
-      margin-bottom: -25px;
-      font-size: 1.3rem;
-    }
-  }
-
-  &__content {
-    position: relative;
-    padding: v.$general-gap;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-    background-color: v.$black-color;
-    width: 80rem;
-    max-width: 95%;
-    height: 95rem;
-    max-height: 90%;
-
-    @include m.responsiveDesign( phone ) {
-      height: 100vh;
-    }
-  }
-
-  &__main {
-    background-color: v.$black-color;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    z-index: 9999;
-    padding: v.$general-gap;
-
-    @include m.responsiveDesign( phone ) {
-      padding: 2rem;
-    }
-  }
-  
-  &__border {
+  &__container {
     width: 100%;
+    margin: 0 auto;
+    background-color: v.$color-white;
+    padding: 1rem;
+  }
+
+  &__box {
+    border: 1px solid rgba( 0 0 0 / .3);
+    padding: 2rem;
     height: 100%;
-    z-index: 999;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   &__title {
-    text-align: center;
-    font-size: 3.2rem;
+    font-weight: 500;
+    color: v.$color-golden;
+    font-family: v.$font-text;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
 
-    @include m.responsiveDesign( tab-port ) {
-      font-size: 4.8rem;
-    }
+  &__line {
+    @include m.line( 5rem, v.$color-golden);
+    margin-bottom: 2rem;
+  }
 
-    @include m.responsiveDesign( phone ) {
-      font-size: 3rem;
+  &__header {
+    padding-bottom: 1rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__button {
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-family: v.$font-text;
+    padding: .5rem 1rem;
+    width: fit-content;
+    text-transform: lowercase;
+    background-color: v.$black-color;
+    
+    &::first-letter {
+      text-transform: uppercase;
     }
   }
   
-  &__header {
+  &__top {
+    color: #000;
+    font-family: v.$font-alter;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  &__name {
+    color: #000;
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  &__message {
+    width: 30rem;
+    margin-top: -6rem;
+    margin-bottom: -3rem;
+  }
+
+  &__information {
+    width: fit-content;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+  }
+
+  &__low {
+    display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid v.$yellow-color;
-
-    @include m.responsiveDesign( phone ) {
-      margin-bottom: 1.2rem;
-      padding-bottom: .5rem;
-    }
+    align-items: center;
   }
 
-  &__figure {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    @include m.responsiveDesign( phone ) {
-      display: none;
-    }
-  }
-
-  &__img {
-    width: 8rem;
-
-    @include m.responsiveDesign( tab-port ) {
-      width: 7rem;
-    }
+  &__qr {
+    max-width: 10rem;
   }
 
 }

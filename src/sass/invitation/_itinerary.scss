@@ -1,0 +1,53 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.itinerary {
+
+  &__list {
+    margin-top: 4rem;
+  }
+
+  &__item {
+    padding-bottom: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    font-family: v.$font-alter;
+    border-bottom: 1px solid #555;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &__hour {
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+  }
+
+  &__name {
+    margin-bottom: 1.5rem ;
+    max-width: 10rem;
+  }
+
+  &__text {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 200;
+  }
+
+  &__square {
+    width: 3rem;
+    height: 3rem;
+    background-color: v.$color-pink;
+    margin-right: 3rem;
+    opacity: .5;
+  }
+
+}

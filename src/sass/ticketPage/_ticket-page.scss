@@ -1,0 +1,158 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.ticket {
+  
+  padding: 2rem 0;
+
+  &__container {
+    padding: 4rem 2rem;
+    background-color: v.$color-white;
+    height: 100%;
+  }
+
+  &__header {
+    margin-bottom: 3.2rem;
+  }
+
+  &__location {
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+    max-width: 25rem;
+  }
+
+  &__top {
+    color: #000;
+    font-size: 5.6rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+  }
+
+  &__place {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  &__hour {
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    color: #000;
+    font-family: v.$font-alter;
+    font-size: 2rem;
+  }
+
+  &__name {
+    color: v.$color-golden;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  &__dire {
+    line-height: 1.7;
+    text-align: right;
+    color: #000;
+    font-family: v.$font-alter;
+    width: 80%;
+    margin-left: auto;
+    margin-bottom: 2rem;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+  }
+
+  &__left {
+    color: #000;
+    text-align: center;
+    font-family: v.$font-alter;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  &__qr {
+    width: 22rem;
+  }
+
+  &__left-message {
+    max-width: 20rem;
+    margin-bottom: -2rem;
+  }
+  
+  &__type {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, .4);
+  }
+
+  &__numbers {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__box {
+    margin-right: 3rem;
+    letter-spacing: 2px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__number {
+    font-size: 3.2rem;
+    font-weight: 300;
+  }
+
+  &__aditional {
+    max-width: 30rem;
+    margin-right: -6rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+
+  &__low {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: #000;
+  }
+
+  &__folio {
+    margin-top: -3rem;
+    font-family: v.$font-alter;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  &__career {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__tables {
+    font-size: 2rem;
+    background-color: v.$black-color;
+    color: v.$color-white;
+    padding: .3rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__line {
+    @include m.line(4rem, rgba(0, 0, 0, .4));
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+  }
+
+}
