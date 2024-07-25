@@ -19,11 +19,14 @@
   }
 
   &__name {
-    font-size: 2.8rem;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
     font-family: v.$font-alter;
     text-transform: uppercase;
     margin-bottom: 4rem;
     letter-spacing: 6px;
+    line-height: 2;
   }
   
   &__text, &__hour, &__location, &__address {

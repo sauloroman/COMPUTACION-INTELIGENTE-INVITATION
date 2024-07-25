@@ -44,7 +44,7 @@ export const startGettingTicketsOfEvent = (eventID = '') => {
       );
       const { tickets } = data;
 
-      const nameTickets = tickets.map((ticket) => ticket.name).filter( nameTicket => nameTicket !== 'Profesores ').sort();
+      const nameTickets = tickets.map((ticket) => ticket.name).filter( nameTicket => !nameTicket.startsWith('Profesores') && !nameTicket.startsWith('Salma')).sort();
       dispatch(setTickets(nameTickets));
     } catch (error) {
       const { error: errorMessage } = error.response?.data;

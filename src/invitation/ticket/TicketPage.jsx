@@ -9,7 +9,7 @@ const TableList = ( { tables } ) => {
   const tablesArr = tables.split(', ');
 
   return (
-    <ul>
+    <ul className="ticket__list">
       {
         tablesArr.map( table => (
           <li key={ table } className="ticket__type"><span>Mesa:</span> {table}</li>

@@ -5,7 +5,7 @@ import { useTicket } from '../../hooks';
 export const Hero = () => {
 
   const { ticket: { name }} = useTicket();
-  const [ firstName, , lastName ] = name.split(' ');
+  // const [ firstName, , lastName ] = name.split(' ');
 
   return (
     <section className="hero animate__animated animate__fadeIn animate__slower" id='hero'>
@@ -13,7 +13,8 @@ export const Hero = () => {
         <div className="flex-center">
           <img src={ heroMessage } alt="Computacion Inteligente" className="hero__message" />
         </div> 
-        <p className="hero__name">{`${firstName} ${lastName}`}</p>
+        {/* <p className="hero__name">{`${firstName} ${lastName}`}</p> */}
+        <p className="hero__name">{ name }</p>
         <p className="hero__text">Con cariño quiero invitarte a<br /> mi graduación</p>
         <p className="hero__date">26.07.24</p>
         <div className="flex-center">
